@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Sudoku</title>
+<link href="/sudoku.css" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h1>The sudoku board</h1>
+
+<form action="/board" class="new_sudoku_board" id="new_sudoku_board" method="post">
+  <table id="board" cellpadding="0" cellspacing="1">
+    <% (0..8).each do |row| %>
+      <tr>
+        <% (0..8).each do |col| %>
+          <%  %>
+          <td class="<%= group_class_name(row, col) %> <%= prev_class_name(row, col) %>">
+            <input type="text" name="board[<%= row %>][<%= col %>]" value="<%= @sudoku_board.at(row,col).value %>" size="1"/>
+          </td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+
+
+  <p>
+    <input id="sudoku_board_submit" name="commit" type="submit" value="Solve" />
+  </p>
+</form>
+
+</body>
+</html>

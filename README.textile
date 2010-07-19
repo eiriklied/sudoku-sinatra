@@ -1,0 +1,12 @@
+h1. Sudoku solver with sinatra
+
+h2. DO
+
+* implement solver
+* implement logging
+
+h2. DOING
+
+* run on heroku
+
+h2. DONE

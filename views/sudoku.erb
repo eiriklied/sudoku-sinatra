@@ -29,6 +29,12 @@
     <input id="sudoku_board_submit" name="commit" type="submit" value="Solve" />
   </p>
 </form>
+<% if @solver and @solver.log? %>
+  <h3>Log from solver:</h3>
+  <% @solver.logs.each do |msg| %>
+    <%= msg %><br/>
+  <% end %>
+<% end %>
 
 </body>
 </html>

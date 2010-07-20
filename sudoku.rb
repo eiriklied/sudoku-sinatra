@@ -2,8 +2,11 @@ require 'rubygems'
 require 'sinatra'
 require 'erb'
 
-require 'lib/sudoku_board.rb'
-require 'lib/sudoku_element.rb'
+require 'lib/sudoku_board'
+require 'lib/sudoku_element'
+require 'lib/logger_helper'
+require 'lib/solvers/default_solver'
+
 
 get '/' do
   @sudoku_board = SudokuBoard.new
@@ -13,8 +16,13 @@ get '/' do
 end
 
 post '/board' do
-  p params
-  "Hello World"
+  @sudoku_board = SudokuBoard.new
+  @sudoku_board.board = params[:board]
+
+  @solver = DefaultSolver.new
+  @solver.solve(@sudoku_board)
+  
+  erb :sudoku
 end
 
 

@@ -7,6 +7,6 @@ h2. DO
 
 h2. DOING
 
-* run on heroku
-
 h2. DONE
+
+* run on heroku

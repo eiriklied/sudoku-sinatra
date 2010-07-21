@@ -2,11 +2,12 @@ h1. Sudoku solver with sinatra
 
 h2. DO
 
-* implement solver
-* implement logging
 
 h2. DOING
 
+* implement solver
+
 h2. DONE
 
+* implement logging
 * run on heroku
